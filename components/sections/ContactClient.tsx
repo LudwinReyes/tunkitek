@@ -19,8 +19,9 @@ import {
   Code2,
   Lock,
 } from 'lucide-react';
-import { COMPANY_DATA, SERVICE_SELECT_OPTIONS } from '@/lib/data';
+import { COMPANY_DATA } from '@/lib/data';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
+import { CustomServiceSelect } from '@/components/ui/CustomServiceSelect';
 import {
   contactSplitStagger,
   leftColumnReveal,
@@ -330,31 +331,13 @@ export function ContactClient() {
                       >
                         Servicio de Interés Principal *
                       </label>
-                      <div className="relative">
-                        <select
-                          id="contact-service"
-                          value={formData.serviceInterest}
-                          onChange={(e) =>
-                            setFormData({ ...formData, serviceInterest: e.target.value })
-                          }
-                          className="w-full px-4 py-3.5 rounded-2xl bg-neutral-50 dark:bg-[#1A1A1A] border border-neutral-300 dark:border-white/15 text-neutral-900 dark:text-white text-sm focus:outline-none focus:border-[#FF4500] focus:ring-1 focus:ring-[#FF4500] transition-all duration-200 appearance-none cursor-pointer"
-                        >
-                          {SERVICE_SELECT_OPTIONS.map((groupItem) => (
-                            <optgroup key={groupItem.group} label={groupItem.group} className="font-bold text-neutral-900 dark:text-white bg-neutral-100 dark:bg-[#1F1F1F]">
-                              {groupItem.options.map((option) => (
-                                <option
-                                  key={option.value}
-                                  value={option.value}
-                                  className="font-normal text-neutral-800 dark:text-neutral-200 bg-white dark:bg-[#141414] py-1"
-                                >
-                                  {option.label}
-                                </option>
-                              ))}
-                            </optgroup>
-                          ))}
-                        </select>
-                        <ChevronDown className="w-4 h-4 text-neutral-500 dark:text-white/50 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-                      </div>
+                      <CustomServiceSelect
+                        id="contact-service"
+                        value={formData.serviceInterest}
+                        onChange={(val) =>
+                          setFormData({ ...formData, serviceInterest: val })
+                        }
+                      />
                     </div>
 
                     {/* 5. Mensaje Detallado */}

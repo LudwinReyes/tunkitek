@@ -254,6 +254,7 @@ export const NAV_LINKS = [
 
 export interface ServiceSelectGroup {
   group: string;
+  iconName: 'Code2' | 'ShoppingCart' | 'Cpu' | 'Smartphone' | 'Bot' | 'Briefcase';
   options: {
     value: string;
     label: string;
@@ -263,6 +264,7 @@ export interface ServiceSelectGroup {
 export const SERVICE_SELECT_OPTIONS: ServiceSelectGroup[] = [
   {
     group: "Desarrollo Web & Landing Pages",
+    iconName: "Code2",
     options: [
       { value: "Landing Pages de Ultra Conversión (CRO)", label: "Landing Pages de Ultra Conversión (CRO)" },
       { value: "Desarrollo Web Corporativo de Alto Impacto", label: "Desarrollo Web Corporativo de Alto Impacto" },
@@ -272,6 +274,7 @@ export const SERVICE_SELECT_OPTIONS: ServiceSelectGroup[] = [
   },
   {
     group: "Comercio Electrónico & Catálogos",
+    iconName: "ShoppingCart",
     options: [
       { value: "E-Commerce B2B para Catálogos Masivos", label: "E-Commerce B2B para Catálogos Masivos" },
       { value: "Catálogos Digitales con Checkout a WhatsApp", label: "Catálogos Digitales con Checkout a WhatsApp" },
@@ -281,6 +284,7 @@ export const SERVICE_SELECT_OPTIONS: ServiceSelectGroup[] = [
   },
   {
     group: "Plataformas SaaS & Software Cloud",
+    iconName: "Cpu",
     options: [
       { value: "Aplicaciones Web & Portales de Clientes (PWA)", label: "Aplicaciones Web & Portales de Clientes (PWA)" },
       { value: "Desarrollo de Plataformas SaaS Multi-Tenant", label: "Desarrollo de Plataformas SaaS Multi-Tenant" },
@@ -290,6 +294,7 @@ export const SERVICE_SELECT_OPTIONS: ServiceSelectGroup[] = [
   },
   {
     group: "Apps Móviles & Sistemas Integrales",
+    iconName: "Smartphone",
     options: [
       { value: "Desarrollo de Aplicaciones Móviles (iOS & Android)", label: "Desarrollo de Aplicaciones Móviles (iOS & Android)" },
       { value: "Sistemas Integrales (Web + Móvil + Desktop)", label: "Sistemas Integrales (Web + Móvil + Desktop)" },
@@ -298,6 +303,7 @@ export const SERVICE_SELECT_OPTIONS: ServiceSelectGroup[] = [
   },
   {
     group: "Automatización RPA & WhatsApp con IA",
+    iconName: "Bot",
     options: [
       { value: "Agentes de IA en WhatsApp Business API Oficial", label: "Agentes de IA en WhatsApp Business API Oficial" },
       { value: "Automatización de Procesos RPA & Flujos", label: "Automatización de Procesos RPA & Flujos" },
@@ -306,6 +312,7 @@ export const SERVICE_SELECT_OPTIONS: ServiceSelectGroup[] = [
   },
   {
     group: "Planes de Inversión & Squads",
+    iconName: "Briefcase",
     options: [
       { value: "Plan Start (S/ 2,500 - S/ 3,500)", label: "Plan Start - S/ 2,500 - S/ 3,500 (Landing & MVP)" },
       { value: "Plan Pro (S/ 4,500)", label: "Plan Pro - S/ 4,500 (Web App & Pasarelas)" },

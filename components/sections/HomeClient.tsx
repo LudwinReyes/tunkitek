@@ -12,8 +12,8 @@ import {
   PLANS_EMPRESARIOS,
   CASE_STUDIES,
   COMPANY_DATA,
-  SERVICE_SELECT_OPTIONS,
 } from '@/lib/data';
+import { CustomServiceSelect } from '@/components/ui/CustomServiceSelect';
 import {
   Check,
   ArrowRight,
@@ -384,25 +384,11 @@ export function HomeClient() {
 
                 <div>
                   <label className="block text-xs font-semibold text-neutral-700 dark:text-white/70 mb-1.5">Plan o Servicio de Interés</label>
-                  <select
+                  <CustomServiceSelect
+                    id="home-quote-plan"
                     value={formData.plan}
-                    onChange={(e) => setFormData({ ...formData, plan: e.target.value })}
-                    className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#0A0A0A] border border-neutral-200 dark:border-white/15 text-neutral-900 dark:text-white text-sm focus:outline-none focus:border-[#FF4500] transition-colors appearance-none cursor-pointer"
-                  >
-                    {SERVICE_SELECT_OPTIONS.map((groupItem) => (
-                      <optgroup key={groupItem.group} label={groupItem.group} className="font-bold text-neutral-900 dark:text-white bg-neutral-100 dark:bg-[#1F1F1F]">
-                        {groupItem.options.map((option) => (
-                          <option
-                            key={option.value}
-                            value={option.value}
-                            className="font-normal text-neutral-800 dark:text-neutral-200 bg-white dark:bg-[#141414] py-1"
-                          >
-                            {option.label}
-                          </option>
-                        ))}
-                      </optgroup>
-                    ))}
-                  </select>
+                    onChange={(val) => setFormData({ ...formData, plan: val })}
+                  />
                 </div>
 
                 <div>
