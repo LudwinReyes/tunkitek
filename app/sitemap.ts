@@ -43,6 +43,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.75,
     },
+    {
+      url: `${baseUrl}/legal/terminos`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/legal/privacidad`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
   ];
 
   // Dynamic 18 Services Pages
