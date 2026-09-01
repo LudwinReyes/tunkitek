@@ -316,7 +316,7 @@ export function HomeClient() {
           </div>
 
           {/* Right Form Card */}
-          <div className="rounded-3xl bg-white dark:bg-[#141414] border border-neutral-200 dark:border-white/15 p-8 shadow-xl shadow-neutral-200/60 dark:shadow-2xl relative overflow-hidden">
+          <div className="rounded-3xl bg-white dark:bg-[#141414] border border-neutral-200 dark:border-white/15 p-8 shadow-xl shadow-neutral-200/60 dark:shadow-2xl relative">
             <div className="absolute top-0 right-0 w-40 h-40 bg-[#FF4500]/10 rounded-full blur-3xl pointer-events-none" />
 
             {formSubmitted ? (

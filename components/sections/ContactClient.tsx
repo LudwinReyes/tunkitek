@@ -211,9 +211,9 @@ export function ContactClient() {
             variants={rightColumnReveal}
             className="lg:col-span-6 w-full"
           >
-            <div className="relative rounded-[2.5rem] bg-white dark:bg-[#141414]/85 backdrop-blur-2xl border border-neutral-200 dark:border-white/10 p-6 sm:p-10 shadow-xl shadow-neutral-200/50 dark:shadow-2xl overflow-hidden">
+            <div className="relative rounded-[2.5rem] bg-white dark:bg-[#141414]/85 backdrop-blur-2xl border border-neutral-200 dark:border-white/10 p-6 sm:p-10 shadow-xl shadow-neutral-200/50 dark:shadow-2xl">
               {/* Subtle top ambient bar */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#FF4500] via-[#FF5514] to-[#FF1493]" />
+              <div className="absolute top-0 left-8 right-8 h-1 rounded-full bg-gradient-to-r from-[#FF4500] via-[#FF5514] to-[#FF1493]" />
 
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (

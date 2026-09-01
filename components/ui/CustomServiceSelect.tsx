@@ -107,7 +107,7 @@ export function CustomServiceSelect({
             exit={{ opacity: 0, y: -6, scale: 0.98 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
             role="listbox"
-            className="absolute z-50 left-0 right-0 mt-2 max-h-72 sm:max-h-80 overflow-y-auto rounded-2xl bg-white dark:bg-[#161616] border border-neutral-200 dark:border-white/15 shadow-2xl p-2 backdrop-blur-2xl text-neutral-900 dark:text-white scrollbar-thin scrollbar-thumb-neutral-300 dark:scrollbar-thumb-neutral-700"
+            className="absolute z-50 left-0 right-0 mt-2 max-h-72 sm:max-h-80 overflow-y-auto overscroll-contain rounded-2xl bg-white dark:bg-[#161616] border border-neutral-200 dark:border-white/15 shadow-2xl p-2.5 pb-5 backdrop-blur-2xl text-neutral-900 dark:text-white"
           >
             {SERVICE_SELECT_OPTIONS.map((groupItem: ServiceSelectGroup) => {
               const GroupIcon = ICON_MAP[groupItem.iconName] || Code2;
