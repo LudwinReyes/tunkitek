@@ -17,6 +17,7 @@ import {
   ChevronDown,
   ArrowRight,
   Code2,
+  Lock,
 } from 'lucide-react';
 import { COMPANY_DATA, SERVICE_SELECT_OPTIONS } from '@/lib/data';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
@@ -401,8 +402,9 @@ export function ContactClient() {
                       </motion.button>
                     </div>
 
-                    <p className="text-[11px] text-neutral-500 dark:text-white/40 text-center mt-3">
-                      🔒 Tus datos están protegidos por acuerdo de confidencialidad comercial.
+                    <p className="text-[11px] text-neutral-500 dark:text-white/40 text-center mt-3 flex items-center justify-center gap-1.5">
+                      <Lock className="w-3.5 h-3.5 text-[#FF4500] shrink-0" />
+                      <span>Tus datos están protegidos por acuerdo de confidencialidad comercial.</span>
                     </p>
                   </motion.form>
                 ) : (

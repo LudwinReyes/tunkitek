@@ -623,9 +623,7 @@ export function ServiceDetailClient({ service, relatedServices }: ServiceDetailC
                 <ul className="space-y-3">
                   {pasData.problemPoints.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-700 dark:text-white/70">
-                      <div className="w-4 h-4 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-[10px]">
-                        ✕
-                      </div>
+                      <XCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                       <span>{point}</span>
                     </li>
                   ))}
