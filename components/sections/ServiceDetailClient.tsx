@@ -49,9 +49,10 @@ import {
 
 interface ServiceDetailClientProps {
   service: ServiceDetail;
+  relatedServices?: ServiceDetail[];
 }
 
-export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
+export function ServiceDetailClient({ service, relatedServices }: ServiceDetailClientProps) {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -440,17 +441,32 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
         {/* ================= NAVEGACIÓN SUPERIOR / BREADCRUMBS ================= */}
-        <div className="flex items-center justify-between gap-4">
-          <Link
-            href="/servicios"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-600 dark:text-white/60 hover:text-[#FF4500] dark:hover:text-white transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Volver al Catálogo de Servicios</span>
-          </Link>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <nav aria-label="Migas de pan" className="flex items-center gap-2 text-xs text-neutral-500 dark:text-white/50">
+            <Link href="/" className="hover:text-[#FF4500] transition-colors">
+              Inicio
+            </Link>
+            <span>/</span>
+            <Link href="/servicios" className="hover:text-[#FF4500] transition-colors">
+              Servicios
+            </Link>
+            <span>/</span>
+            <span className="text-neutral-900 dark:text-white font-semibold truncate max-w-[220px] sm:max-w-none">
+              {service.shortTitle}
+            </span>
+          </nav>
 
-          <div className="text-[11px] font-bold px-3 py-1 rounded-full bg-neutral-100 dark:bg-white/5 text-neutral-600 dark:text-white/60 border border-neutral-200 dark:border-white/10 hidden sm:inline-block">
-            {service.categoryLabel}
+          <div className="flex items-center gap-3">
+            <div className="text-[11px] font-bold px-3 py-1 rounded-full bg-neutral-100 dark:bg-white/5 text-neutral-600 dark:text-white/60 border border-neutral-200 dark:border-white/10 hidden sm:inline-block">
+              {service.categoryLabel}
+            </div>
+            <Link
+              href="/servicios"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-600 dark:text-white/60 hover:text-[#FF4500] dark:hover:text-white transition-colors"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Volver al Catálogo</span>
+            </Link>
           </div>
         </div>
 
@@ -925,6 +941,53 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
             </form>
           )}
         </div>
+
+        {/* ================= 8. SERVICIOS RELACIONADOS & ECOSISTEMA TECNOLÓGICO (SEO INTERNAL MESH) ================= */}
+        {relatedServices && relatedServices.length > 0 && (
+          <section aria-labelledby="related-services-heading" className="pt-10 pb-6 border-t border-neutral-200 dark:border-white/10 space-y-8">
+            <div className="text-center max-w-2xl mx-auto space-y-2.5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF4500]/10 text-[#FF4500] text-xs font-bold">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Ecosistema Tecnológico Complementario</span>
+              </div>
+              <h2 id="related-services-heading" className="text-2xl sm:text-3xl font-black text-neutral-900 dark:text-white">
+                Soluciones que complementan {service.shortTitle}
+              </h2>
+              <p className="text-xs sm:text-sm text-neutral-600 dark:text-white/70">
+                Multiplica la eficiencia y rentabilidad de tu empresa integrando nuestra ingeniería especializada.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedServices.map((rel) => (
+                <Link
+                  key={rel.slug}
+                  href={`/servicios/${rel.slug}`}
+                  className="group p-6 rounded-3xl bg-white dark:bg-[#141414] border border-neutral-200 dark:border-white/10 hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-white/5 text-[#FF4500] border border-[#FF4500]/20">
+                        {rel.categoryLabel}
+                      </span>
+                      <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-[#FF4500] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-black text-neutral-900 dark:text-white group-hover:text-[#FF4500] transition-colors leading-snug">
+                      {rel.title}
+                    </h3>
+                    <p className="text-xs text-neutral-600 dark:text-white/60 line-clamp-2 leading-relaxed">
+                      {rel.subtitle}
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-neutral-100 dark:border-white/5 flex items-center justify-between text-xs">
+                    <span className="text-neutral-500 dark:text-white/40">Desde {rel.pricingHint?.startingAt || 'S/ 2,600'}</span>
+                    <span className="font-bold text-[#FF4500] group-hover:underline">Conocer más &rarr;</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

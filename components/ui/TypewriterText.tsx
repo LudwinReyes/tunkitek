@@ -51,9 +51,12 @@ export function TypewriterText({
 
   return (
     <span className={`inline-block ${className}`}>
-      <span>{currentSubstring}</span>
+      {/* Texto completo accesible e indexable para motores de búsqueda (Googlebot) en SSR */}
+      <span className="sr-only">{text}</span>
+      <span aria-hidden="true">{currentSubstring}</span>
       {!isComplete && (
         <motion.span
+          aria-hidden="true"
           animate={{ opacity: [1, 0, 1] }}
           transition={{ duration: 0.8, repeat: Infinity }}
           className="inline-block w-1.5 sm:w-2 h-7 sm:h-11 bg-[#FF4500] ml-1.5 align-middle rounded-sm"

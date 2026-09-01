@@ -1,6 +1,7 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import {
@@ -205,6 +206,42 @@ export function AboutClient() {
             transforma operaciones y escala la facturación de tu empresa.
           </motion.p>
         </div>
+
+        {/* ================= TEAM HERO PHOTOGRAPH ================= */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="relative max-w-5xl mx-auto mb-16 sm:mb-24 rounded-[3rem] overflow-hidden border-2 border-neutral-200 dark:border-white/10 shadow-2xl shadow-neutral-300/60 dark:shadow-[#FF4500]/5 group"
+        >
+          <div className="relative aspect-[16/9] w-full overflow-hidden">
+            <Image
+              src="/assets/about/equipo-tunkitek.jpg"
+              alt="Equipo de Ingeniería de Software TunkiTek en sesión de arquitectura de sistemas"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 1200px"
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            {/* Subtle bottom gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+
+            {/* Bottom Caption Pill */}
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-white z-10">
+              <div className="flex items-center gap-3">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse" />
+                <div>
+                  <p className="text-sm font-bold tracking-tight">Squad de Ingeniería & Arquitectura de Software</p>
+                  <p className="text-xs text-white/70">Diseño de sistemas de alto rendimiento • Lima, Perú</p>
+                </div>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-semibold">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#FF4500]" />
+                <span>100% Talento Local Senior</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* ================= 2. MARQUESINA DE STACK TÉCNICO (INFINITE SCROLL) ================= */}
         <div className="mb-20 sm:mb-28 overflow-hidden rounded-[2.5rem] bg-white dark:bg-[#121212] border border-neutral-200 dark:border-white/10 p-6 sm:p-8 backdrop-blur-md shadow-lg shadow-neutral-200/50 dark:shadow-2xl relative">

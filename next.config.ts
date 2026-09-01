@@ -8,8 +8,11 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  compress: true,
+  poweredByHeader: false,
   // Allow access to remote image placeholder.
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',

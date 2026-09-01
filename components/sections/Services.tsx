@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -93,7 +93,7 @@ export function Services() {
         label: 'Tiempo de Carga Promedio',
         subLabel: '+42% en tasa de checkout completado',
       },
-      imageSrc: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
+      imageSrc: '/assets/services/web-ecommerce.jpg',
       imageAlt: 'TunkiTek Desarrollo Web y E-commerce de Alto Rendimiento',
       techStack: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Shopify Headless', 'Stripe / Culqi'],
       peruIntegrations: ['Yape QR', 'Plin', 'Niubiz', 'Izipay', 'SUNAT Facturación'],
@@ -133,7 +133,7 @@ export function Services() {
         label: 'Disponibilidad de Servidores (SLA)',
         subLabel: '-65% en horas operativas manuales',
       },
-      imageSrc: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
+      imageSrc: '/assets/services/saas-apps.jpg',
       imageAlt: 'TunkiTek Sistemas SaaS y Aplicaciones Empresariales',
       techStack: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Google Cloud / AWS'],
       peruIntegrations: ['Validación BCP/BBVA', 'Facturación SUNAT', 'RUC/DNI Reniec API', 'APIs Bancarias'],
@@ -173,7 +173,7 @@ export function Services() {
         label: 'Atención Automatizada Continua',
         subLabel: '3x más prospectos calificados',
       },
-      imageSrc: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop',
+      imageSrc: '/assets/services/automatizacion-ia.jpg',
       imageAlt: 'TunkiTek Automatización e Inteligencia Artificial',
       techStack: ['Gemini 2.5', 'WhatsApp Cloud API', 'Python', 'n8n', 'Vector Embeddings'],
       peruIntegrations: ['WhatsApp API Oficial', 'Pasarelas de Pago Link', 'Google Sheets / CRMs', 'Alertas SUNAT'],

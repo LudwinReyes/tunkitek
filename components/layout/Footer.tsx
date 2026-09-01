@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -49,15 +49,40 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Soluciones */}
+          {/* Col 3: Soluciones Principales (Internal Linking Silo) */}
           <div>
-            <h4 className="text-sm font-bold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Especialidades</h4>
-            <ul className="space-y-2.5 text-sm text-neutral-600 dark:text-white/60">
-              <li className="hover:text-neutral-900 dark:hover:text-white transition-colors">Desarrollo Web & SaaS</li>
-              <li className="hover:text-neutral-900 dark:hover:text-white transition-colors">Arquitectura Serverless</li>
-              <li className="hover:text-neutral-900 dark:hover:text-white transition-colors">Inteligencia Artificial</li>
-              <li className="hover:text-neutral-900 dark:hover:text-white transition-colors">Software a Medida & APIs</li>
-              <li className="hover:text-neutral-900 dark:hover:text-white transition-colors">Diseño UI/UX Orgánico</li>
+            <h4 className="text-sm font-bold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Servicios Core</h4>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link href="/servicios/landing-pages-alta-conversion" className="text-neutral-600 dark:text-white/60 hover:text-[#FF4500] dark:hover:text-[#FF4500] transition-colors block">
+                  Landing Pages CRO
+                </Link>
+              </li>
+              <li>
+                <Link href="/servicios/desarrollo-web-corporativo" className="text-neutral-600 dark:text-white/60 hover:text-[#FF4500] dark:hover:text-[#FF4500] transition-colors block">
+                  Desarrollo Web Next.js
+                </Link>
+              </li>
+              <li>
+                <Link href="/servicios/sistemas-saas-cloud" className="text-neutral-600 dark:text-white/60 hover:text-[#FF4500] dark:hover:text-[#FF4500] transition-colors block">
+                  SaaS Multi-Tenant Cloud
+                </Link>
+              </li>
+              <li>
+                <Link href="/servicios/aplicaciones-moviles-ios-android" className="text-neutral-600 dark:text-white/60 hover:text-[#FF4500] dark:hover:text-[#FF4500] transition-colors block">
+                  Apps Móviles iOS & Android
+                </Link>
+              </li>
+              <li>
+                <Link href="/servicios/sistemas-validacion-pagos" className="text-neutral-600 dark:text-white/60 hover:text-[#FF4500] dark:hover:text-[#FF4500] transition-colors block">
+                  Validación Yape & Plin
+                </Link>
+              </li>
+              <li>
+                <Link href="/servicios/automatizacion-industrial-bots" className="text-neutral-600 dark:text-white/60 hover:text-[#FF4500] dark:hover:text-[#FF4500] transition-colors block">
+                  Bots WhatsApp con IA
+                </Link>
+              </li>
             </ul>
           </div>
 

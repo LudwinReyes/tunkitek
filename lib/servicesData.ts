@@ -1822,42 +1822,76 @@ export const SERVICES_DETAILED_DATA: Record<string, ServiceDetail> = {
 // All available 18 slugs
 export const ALL_SERVICE_SLUGS = Object.keys(SERVICES_DETAILED_DATA);
 
+const UNIVERSAL_COMMERCIAL_FAQS = [
+  {
+    question: '¿El código fuente y la propiedad intelectual son 100% de mi empresa?',
+    answer:
+      'Totalmente. Al finalizar el proyecto, te transferimos formalmente todo el código fuente, repositorios en GitHub, bases de datos y accesos cloud. Sin licencias cautivas ni dependencias.',
+  },
+  {
+    question: '¿Emiten factura electrónica formal con RUC y contrato en Perú?',
+    answer:
+      'Sí. Somos una empresa formalmente constituida en Perú. Todos nuestros proyectos se ejecutan bajo contrato de desarrollo de software, acuerdo de confidencialidad (NDA) y emisión de factura electrónica con RUC.',
+  },
+  {
+    question: '¿Qué garantía y soporte técnico post-lanzamiento incluye este servicio?',
+    answer:
+      'Cada desarrollo cuenta con garantía técnica de 30 a 60 días sin costo para corrección de bugs o ajustes operativos, además de capacitación completa para tu equipo y canal de soporte prioritario por WhatsApp.',
+  },
+];
+
 // Helper for resolving slug and handling backward compatibility aliases
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
   const normalized = slug.toLowerCase().trim();
   
+  let base: ServiceDetail | undefined;
   if (SERVICES_DETAILED_DATA[normalized]) {
-    return SERVICES_DETAILED_DATA[normalized];
+    base = SERVICES_DETAILED_DATA[normalized];
+  } else if (normalized === 'desarrollo-web-ecommerce' || normalized === 'web' || normalized === 'ecommerce' || normalized === 'desarrollo-web') {
+    base = SERVICES_DETAILED_DATA['desarrollo-web-corporativo'];
+  } else if (normalized === 'sistemas-saas' || normalized === 'sistemas-saas-apps' || normalized === 'saas') {
+    base = SERVICES_DETAILED_DATA['sistemas-saas-cloud'];
+  } else if (normalized === 'automatizacion-bots' || normalized === 'automatizacion-bots-ia' || normalized === 'bots' || normalized === 'automatizacion') {
+    base = SERVICES_DETAILED_DATA['automatizacion-industrial-bots'];
+  } else if (normalized === 'landing-pages' || normalized === 'landing-page' || normalized === 'landing') {
+    base = SERVICES_DETAILED_DATA['landing-pages-alta-conversion'];
+  } else if (normalized === 'wordpress' || normalized === 'woocommerce') {
+    base = SERVICES_DETAILED_DATA['sitios-web-wordpress-profesional'];
+  } else if (normalized === 'headless' || normalized === 'headless-commerce') {
+    base = SERVICES_DETAILED_DATA['ecommerce-headless-alto-rendimiento'];
+  } else if (normalized === 'apps' || normalized === 'mobile' || normalized === 'app-movil') {
+    base = SERVICES_DETAILED_DATA['aplicaciones-moviles-ios-android'];
+  } else if (normalized === 'erp' || normalized === 'crm') {
+    base = SERVICES_DETAILED_DATA['paneles-administrativos-erp-crm'];
+  } else if (normalized === 'sistemas-integrales' || normalized === 'omnichannel') {
+    base = SERVICES_DETAILED_DATA['sistemas-integrales-omnichannel'];
   }
   
-  // Backward compatibility alias mappings
-  if (normalized === 'desarrollo-web-ecommerce' || normalized === 'web' || normalized === 'ecommerce' || normalized === 'desarrollo-web') {
-    return SERVICES_DETAILED_DATA['desarrollo-web-corporativo'];
-  }
-  if (normalized === 'sistemas-saas' || normalized === 'sistemas-saas-apps' || normalized === 'saas') {
-    return SERVICES_DETAILED_DATA['sistemas-saas-cloud'];
-  }
-  if (normalized === 'automatizacion-bots' || normalized === 'automatizacion-bots-ia' || normalized === 'bots' || normalized === 'automatizacion') {
-    return SERVICES_DETAILED_DATA['automatizacion-industrial-bots'];
-  }
-  if (normalized === 'landing-pages' || normalized === 'landing-page' || normalized === 'landing') {
-    return SERVICES_DETAILED_DATA['landing-pages-alta-conversion'];
-  }
-  if (normalized === 'wordpress' || normalized === 'woocommerce') {
-    return SERVICES_DETAILED_DATA['sitios-web-wordpress-profesional'];
-  }
-  if (normalized === 'headless' || normalized === 'headless-commerce') {
-    return SERVICES_DETAILED_DATA['ecommerce-headless-alto-rendimiento'];
-  }
-  if (normalized === 'apps' || normalized === 'mobile' || normalized === 'app-movil') {
-    return SERVICES_DETAILED_DATA['aplicaciones-moviles-ios-android'];
-  }
-  if (normalized === 'erp' || normalized === 'crm') {
-    return SERVICES_DETAILED_DATA['paneles-administrativos-erp-crm'];
-  }
-  if (normalized === 'sistemas-integrales' || normalized === 'omnichannel') {
-    return SERVICES_DETAILED_DATA['sistemas-integrales-omnichannel'];
-  }
-  
-  return undefined;
+  if (!base) return undefined;
+
+  // Enhance service with universal commercial FAQs if not already present
+  const existingQuestions = new Set(base.faq.map((f) => f.question));
+  const additionalFaqs = UNIVERSAL_COMMERCIAL_FAQS.filter((f) => !existingQuestions.has(f.question));
+
+  return {
+    ...base,
+    faq: [...base.faq, ...additionalFaqs],
+  };
+}
+
+// Helper to get 3 contextually related services for internal linking mesh (Topical SEO Clusters)
+export function getRelatedServices(slug: string, limit = 3): ServiceDetail[] {
+  const current = getServiceBySlug(slug);
+  if (!current) return [];
+
+  const allServices = Object.values(SERVICES_DETAILED_DATA).filter(
+    (s) => s.slug !== current.slug
+  );
+
+  // Prioritize same category first
+  const sameCategory = allServices.filter((s) => s.category === current.category);
+  const otherCategories = allServices.filter((s) => s.category !== current.category);
+
+  const combined = [...sameCategory, ...otherCategories];
+  return combined.slice(0, limit);
 }

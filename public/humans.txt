@@ -1,0 +1,10 @@
+/* TEAM */
+Engineering Lead & Founders: TunkiTek Team
+Location: Lima, Peru & Remote Global
+Contact: ventas@tunkitek.lat
+Website: https://tunkitek.lat
+
+/* SITE */
+Standards: HTML5, CSS3, ES2024, TypeScript, JSON-LD, Next.js 15
+Components: React 19, Tailwind CSS, Motion
+Software: Cloudflare, GCP, Supabase

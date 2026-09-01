@@ -48,6 +48,26 @@ export const metadata: Metadata = {
     description: 'Más que proveedores, somos tu equipo aliado en tecnología e innovación.',
     images: ['/favicon.png'],
   },
+  alternates: {
+    canonical: 'https://tunkitek.lat',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'geo.region': 'PE-LIM',
+    'geo.placename': 'Lima, Perú',
+    'geo.position': '-12.046374;-77.042793',
+    'ICBM': '-12.046374, -77.042793',
+  },
 };
 
 export default function RootLayout({

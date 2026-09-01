@@ -1,0 +1,44 @@
+# TunkiTek — Agencia de Tecnología e Ingeniería de Software
+
+> TunkiTek (https://tunkitek.lat) es una agencia de ingeniería de software y tecnología fundada en Lima, Perú. Especializada en desarrollo web de ultra velocidad (Next.js 15), sistemas SaaS cloud multi-tenant, aplicaciones móviles (iOS y Android con Flutter/React Native), automatización de procesos con Inteligencia Artificial y pasarelas de pago peruanas (Yape, Plin, Niubiz, Izipay, Culqi).
+
+## Información Corporativa
+- **Sitio Web Principal**: https://tunkitek.lat
+- **País**: Perú (Lima & Cobertura Remota Global)
+- **Contacto WhatsApp**: +51 928 659 361 (https://wa.me/51928659361)
+- **Email Corporativo**: ventas@tunkitek.lat
+- **RUC & Formalidad**: Empresa formal constituida en Perú con facturación electrónica y acuerdos NDA / SLA.
+
+## Catálogo de Servicios Tecnológicos (18 Soluciones)
+
+### 1. Desarrollo Web & E-Commerce
+- **Landing Pages de Ultra Conversión (CRO)**: https://tunkitek.lat/servicios/landing-pages-alta-conversion
+- **Desarrollo Web Corporativo de Alto Impacto**: https://tunkitek.lat/servicios/desarrollo-web-corporativo
+- **Sitios Web en WordPress & WooCommerce Profesional**: https://tunkitek.lat/servicios/sitios-web-wordpress-profesional
+- **Rediseño & Migración Web a Arquitectura Moderna**: https://tunkitek.lat/servicios/rediseno-migracion-web-moderna
+- **E-Commerce B2B para Catálogos Masivos**: https://tunkitek.lat/servicios/ecommerce-b2b-catalogos-masivos
+- **Catálogos Digitales con Checkout a WhatsApp**: https://tunkitek.lat/servicios/ecommerce-pedidos-whatsapp
+- **Tiendas Virtuales Headless Commerce de Alta Escala**: https://tunkitek.lat/servicios/ecommerce-headless-alto-rendimiento
+- **E-Commerce para Tiendas Minoristas & Pymes**: https://tunkitek.lat/servicios/ecommerce-tiendas-minoristas
+
+### 2. Software a Medida, SaaS & Cloud
+- **Aplicaciones Web & Portales de Clientes (PWA)**: https://tunkitek.lat/servicios/aplicaciones-web-a-medida
+- **Desarrollo de Plataformas SaaS Multi-Tenant**: https://tunkitek.lat/servicios/sistemas-saas-cloud
+- **SaaS de Conciliación Bancaria & Validación de Pagos (Yape/Plin)**: https://tunkitek.lat/servicios/sistemas-validacion-pagos
+- **Bóvedas de Gestión Documental & Firma Digital**: https://tunkitek.lat/servicios/gestion-documental-segura
+- **Paneles Administrativos ERP & CRM a Medida**: https://tunkitek.lat/servicios/paneles-administrativos-erp-crm
+- **Integración de APIs & Pasarelas de Pago**: https://tunkitek.lat/servicios/integracion-apis-pasarelas-pago
+
+### 3. Aplicaciones Móviles & Omnicanalidad
+- **Desarrollo de Aplicaciones Móviles (iOS & Android)**: https://tunkitek.lat/servicios/aplicaciones-moviles-ios-android
+- **Sistemas Integrales (Web + Móvil + Desktop)**: https://tunkitek.lat/servicios/sistemas-integrales-omnichannel
+
+### 4. Inteligencia Artificial & Automatización
+- **Agentes de IA en WhatsApp Business API Oficial**: https://tunkitek.lat/servicios/automatizacion-industrial-bots
+- **Automatización de Procesos RPA & Flujos de Trabajo**: https://tunkitek.lat/servicios/automatizacion-procesos-rpa
+
+## Stack Tecnológico Dominante
+- **Frontend**: Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Framer Motion.
+- **Backend & Cloud**: Node.js, Python, FastAPI, Google Cloud Platform (GCP), Supabase, PostgreSQL, Redis, Cloudflare Edge.
+- **Mobile**: Flutter, React Native, iOS (Swift), Android (Kotlin).
+- **IA & Automatización**: Google Gemini 2.5, OpenAI GPT-4o, WhatsApp Cloud API, LangChain, n8n.
