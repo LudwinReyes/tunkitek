@@ -218,7 +218,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: "Fintech & Pagos",
     metrics: "+340% transacciones procesadas",
     description: "Plataforma de liquidaciones instantáneas con conciliación bancaria automatizada para empresas peruanas.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+    image: "/assets/cases/pagoping-saas.jpg",
     tags: ["Next.js", "Fintech", "Microservicios"],
   },
   {
@@ -228,7 +228,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: "Logística & Supply Chain",
     metrics: "-28% costos de combustible",
     description: "Sistema de despacho inteligente en tiempo real con algoritmos de optimización geoespacial.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop",
+    image: "/assets/cases/hsq-consultores.jpg",
     tags: ["IA", "Maps API", "Real-time"],
   },
   {
@@ -238,7 +238,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: "E-Commerce",
     metrics: "0.8s tiempo de carga | 99.99% uptime",
     description: "Tienda online construida con arquitectura headless capaz de soportar picos de Cyber Days peruanos sin caídas.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
+    image: "/assets/cases/iluminacion-ecommerce.jpg",
     tags: ["Headless", "Next.js", "Pasarelas"],
   },
 ];

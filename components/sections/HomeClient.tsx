@@ -232,7 +232,7 @@ export function HomeClient() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={study.image}
-                  alt={study.title}
+                  alt={`Caso de éxito TunkiTek: ${study.title} - ${study.client}`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white border border-white/10">

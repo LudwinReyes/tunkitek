@@ -169,7 +169,7 @@ export function CasesClient() {
                   <div className="absolute inset-0 w-full h-full overflow-hidden">
                     <Image
                       src={caseItem.imageUrl}
-                      alt={caseItem.title}
+                      alt={`Caso de éxito TunkiTek: ${caseItem.title} - ${caseItem.client} (${caseItem.category})`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
                       className="object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
