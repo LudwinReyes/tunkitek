@@ -497,38 +497,37 @@ export function Services() {
               </div>
 
               {/* Right Column: Photorealistic Visual & Telemetry */}
-              <div className="lg:col-span-5 relative">
-                <div className="relative rounded-[2.8rem] rounded-tr-[1.2rem] rounded-bl-[1.2rem] overflow-hidden border-2 border-neutral-200 dark:border-white/15 bg-gradient-to-b from-neutral-100 to-neutral-200 dark:from-[#1E1E1E] dark:to-[#0E0E0E] shadow-xl dark:shadow-2xl group">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src={currentGroup.imageSrc}
-                      alt={currentGroup.imageAlt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                      className="object-cover opacity-90 dark:opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
-                      referrerPolicy="no-referrer"
-                    />
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 dark:from-[#0A0A0A] via-transparent to-transparent opacity-85" />
-                  </div>
+              <div className="lg:col-span-5 relative flex flex-col justify-center">
+                <div className="relative rounded-[2.8rem] rounded-tr-[1.2rem] rounded-bl-[1.2rem] overflow-hidden border-2 border-neutral-200 dark:border-white/15 bg-neutral-900 shadow-xl dark:shadow-2xl group w-full h-[320px] sm:h-[380px] lg:h-[430px]">
+                  <Image
+                    key={currentGroup.id}
+                    src={currentGroup.imageSrc}
+                    alt={currentGroup.imageAlt}
+                    fill
+                    priority
+                    unoptimized
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  {/* Subtle bottom gradient overlay for maximum contrast with HUD */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
-                  {/* Floating Metric Pill Inside Image */}
+                  {/* High-Contrast Floating Metric Card Inside Image */}
                   <div className="absolute bottom-4 left-4 right-4 z-10">
-                    <div className="glass-card-glow rounded-2xl p-4 flex items-center gap-3.5 backdrop-blur-xl border border-[#FF4500]/40">
+                    <div className="rounded-2xl p-4 flex items-center gap-3.5 backdrop-blur-2xl bg-neutral-950/90 border border-white/20 shadow-2xl shadow-black/50">
                       <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#FF4500] to-[#FF1493] flex items-center justify-center text-white shadow-md shadow-[#FF4500]/40 flex-shrink-0">
-                        <Activity className="w-5 h-5" />
+                        <Activity className="w-5 h-5 text-white" />
                       </div>
-                      <div>
-                        <div className="text-xl font-black text-white">{currentGroup.metrics.value}</div>
-                        <div className="text-xs text-white/95 font-bold">{currentGroup.metrics.label}</div>
-                        <div className="text-[11px] text-[#FF4500] font-bold mt-0.5">{currentGroup.metrics.subLabel}</div>
+                      <div className="min-w-0">
+                        <div className="text-2xl font-black text-white tracking-tight leading-none mb-1">{currentGroup.metrics.value}</div>
+                        <div className="text-xs text-neutral-200 font-bold leading-tight">{currentGroup.metrics.label}</div>
+                        <div className="text-[11px] text-[#FF6A33] font-extrabold mt-0.5">{currentGroup.metrics.subLabel}</div>
                       </div>
                     </div>
                   </div>
 
                   {/* Top Status Badge */}
                   <div className="absolute top-4 right-4 z-10">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-black/85 backdrop-blur-md text-white border border-white/15 shadow-md">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-neutral-950/85 backdrop-blur-md text-white border border-white/20 shadow-md">
                       <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
                       Ingeniería Senior
                     </span>
