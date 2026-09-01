@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
 import { ValueProposition } from '@/components/sections/ValueProposition';
@@ -11,6 +12,7 @@ import {
   PLANS_EMPRESARIOS,
   CASE_STUDIES,
   COMPANY_DATA,
+  SERVICE_SELECT_OPTIONS,
 } from '@/lib/data';
 import {
   Check,
@@ -36,7 +38,7 @@ export function HomeClient() {
     name: '',
     email: '',
     phone: '',
-    plan: 'Start (S/ 3,500)',
+    plan: 'Landing Pages de Ultra Conversión (CRO)',
     message: '',
   });
 
@@ -228,13 +230,16 @@ export function HomeClient() {
               id={`case-card-${study.id}`}
               className="group rounded-3xl bg-white dark:bg-[#141414] border border-neutral-200 dark:border-white/10 hover:border-[#FF4500]/40 overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-md shadow-neutral-200/50 dark:shadow-none"
             >
-              <div className="relative h-48 w-full overflow-hidden bg-neutral-200 dark:bg-[#1E1E1E]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative h-52 w-full overflow-hidden bg-neutral-900">
+                <Image
                   src={study.image}
                   alt={`Caso de éxito TunkiTek: ${study.title} - ${study.client}`}
+                  fill
+                  unoptimized
+                  priority
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white border border-white/10">
                   {study.category}
                 </div>
@@ -382,22 +387,21 @@ export function HomeClient() {
                   <select
                     value={formData.plan}
                     onChange={(e) => setFormData({ ...formData, plan: e.target.value })}
-                    className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#0A0A0A] border border-neutral-200 dark:border-white/15 text-neutral-900 dark:text-white text-sm focus:outline-none focus:border-[#FF4500] transition-colors"
+                    className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#0A0A0A] border border-neutral-200 dark:border-white/15 text-neutral-900 dark:text-white text-sm focus:outline-none focus:border-[#FF4500] transition-colors appearance-none cursor-pointer"
                   >
-                    <optgroup label="Planes Emprendedores">
-                      <option value="Start (S/ 3,500)">Start - S/ 3,500 (Landing & MVP)</option>
-                      <option value="Pro (S/ 4,500)">Pro - S/ 4,500 (Web App & Pasarelas)</option>
-                      <option value="Business (S/ 5,500)">Business - S/ 5,500 (Completo & CRM)</option>
-                    </optgroup>
-                    <optgroup label="Planes Empresarios">
-                      <option value="Pionero (S/ 10,000)">Pionero - S/ 10,000 (Cloud & Microservicios)</option>
-                      <option value="Conquistador (S/ 15,000)">Conquistador - S/ 15,000 (Web + Mobile App)</option>
-                      <option value="Magnate (S/ 20,000)">Magnate - S/ 20,000 (Squad Dedicado)</option>
-                    </optgroup>
-                    <optgroup label="Otros Servicios">
-                      <option value="Desarrollo a Medida">Desarrollo a Medida / Consultoría</option>
-                      <option value="Inteligencia Artificial">Integración de Inteligencia Artificial</option>
-                    </optgroup>
+                    {SERVICE_SELECT_OPTIONS.map((groupItem) => (
+                      <optgroup key={groupItem.group} label={groupItem.group} className="font-bold text-neutral-900 dark:text-white bg-neutral-100 dark:bg-[#1F1F1F]">
+                        {groupItem.options.map((option) => (
+                          <option
+                            key={option.value}
+                            value={option.value}
+                            className="font-normal text-neutral-800 dark:text-neutral-200 bg-white dark:bg-[#141414] py-1"
+                          >
+                            {option.label}
+                          </option>
+                        ))}
+                      </optgroup>
+                    ))}
                   </select>
                 </div>
 

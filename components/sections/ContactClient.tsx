@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -18,7 +18,7 @@ import {
   ArrowRight,
   Code2,
 } from 'lucide-react';
-import { COMPANY_DATA } from '@/lib/data';
+import { COMPANY_DATA, SERVICE_SELECT_OPTIONS } from '@/lib/data';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import {
   contactSplitStagger,
@@ -37,7 +37,7 @@ export function ContactClient() {
     name: '',
     email: '',
     company: '',
-    serviceInterest: 'Desarrollo Web & E-commerce',
+    serviceInterest: 'Landing Pages de Ultra Conversión (CRO)',
     message: '',
   });
 
@@ -63,7 +63,7 @@ export function ContactClient() {
       name: '',
       email: '',
       company: '',
-      serviceInterest: 'Desarrollo Web & E-commerce',
+      serviceInterest: 'Landing Pages de Ultra Conversión (CRO)',
       message: '',
     });
   };
@@ -338,19 +338,19 @@ export function ContactClient() {
                           }
                           className="w-full px-4 py-3.5 rounded-2xl bg-neutral-50 dark:bg-[#1A1A1A] border border-neutral-300 dark:border-white/15 text-neutral-900 dark:text-white text-sm focus:outline-none focus:border-[#FF4500] focus:ring-1 focus:ring-[#FF4500] transition-all duration-200 appearance-none cursor-pointer"
                         >
-                          <option value="Desarrollo Web & E-commerce">
-                            Desarrollo Web & E-commerce de Alta Conversión
-                          </option>
-                          <option value="Sistemas SaaS & Apps">
-                            Sistemas SaaS & Aplicaciones a Medida
-                          </option>
-                          <option value="Automatizacion & Bots con IA">
-                            Automatización Industrial & Bots con IA
-                          </option>
-                          <option value="Auditoria y Refactorizacion">
-                            Auditoría de Código y Modernización Cloud
-                          </option>
-                          <option value="Otro">Otro requerimiento personalizado</option>
+                          {SERVICE_SELECT_OPTIONS.map((groupItem) => (
+                            <optgroup key={groupItem.group} label={groupItem.group} className="font-bold text-neutral-900 dark:text-white bg-neutral-100 dark:bg-[#1F1F1F]">
+                              {groupItem.options.map((option) => (
+                                <option
+                                  key={option.value}
+                                  value={option.value}
+                                  className="font-normal text-neutral-800 dark:text-neutral-200 bg-white dark:bg-[#141414] py-1"
+                                >
+                                  {option.label}
+                                </option>
+                              ))}
+                            </optgroup>
+                          ))}
                         </select>
                         <ChevronDown className="w-4 h-4 text-neutral-500 dark:text-white/50 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                       </div>

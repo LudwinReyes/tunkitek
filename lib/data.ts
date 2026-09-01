@@ -251,3 +251,68 @@ export const NAV_LINKS = [
   { label: "FAQ", href: "/faq" },
   { label: "Contacto", href: "/contacto" },
 ];
+
+export interface ServiceSelectGroup {
+  group: string;
+  options: {
+    value: string;
+    label: string;
+  }[];
+}
+
+export const SERVICE_SELECT_OPTIONS: ServiceSelectGroup[] = [
+  {
+    group: "🌐 Desarrollo Web & Landing Pages",
+    options: [
+      { value: "Landing Pages de Ultra Conversión (CRO)", label: "Landing Pages de Ultra Conversión (CRO)" },
+      { value: "Desarrollo Web Corporativo de Alto Impacto", label: "Desarrollo Web Corporativo de Alto Impacto" },
+      { value: "Sitios Web en WordPress & WooCommerce Pro", label: "Sitios Web en WordPress & WooCommerce Pro" },
+      { value: "Rediseño & Migración a Arquitectura Moderna", label: "Rediseño & Migración a Arquitectura Moderna" },
+    ],
+  },
+  {
+    group: "🛒 Comercio Electrónico & Catálogos",
+    options: [
+      { value: "E-Commerce B2B para Catálogos Masivos", label: "E-Commerce B2B para Catálogos Masivos" },
+      { value: "Catálogos Digitales con Checkout a WhatsApp", label: "Catálogos Digitales con Checkout a WhatsApp" },
+      { value: "Tiendas Virtuales Headless de Alta Escala", label: "Tiendas Virtuales Headless de Alta Escala" },
+      { value: "E-Commerce para Tiendas Minoristas & Pymes", label: "E-Commerce para Tiendas Minoristas & Pymes" },
+    ],
+  },
+  {
+    group: "⚙️ Plataformas SaaS & Software Cloud",
+    options: [
+      { value: "Aplicaciones Web & Portales de Clientes (PWA)", label: "Aplicaciones Web & Portales de Clientes (PWA)" },
+      { value: "Desarrollo de Plataformas SaaS Multi-Tenant", label: "Desarrollo de Plataformas SaaS Multi-Tenant" },
+      { value: "SaaS de Conciliación Bancaria & Validación Yape/Plin", label: "SaaS de Conciliación Bancaria & Validación Yape/Plin" },
+      { value: "Bóvedas de Gestión Documental Cifrada", label: "Bóvedas de Gestión Documental Cifrada" },
+    ],
+  },
+  {
+    group: "📱 Apps Móviles & Sistemas Integrales",
+    options: [
+      { value: "Desarrollo de Aplicaciones Móviles (iOS & Android)", label: "Desarrollo de Aplicaciones Móviles (iOS & Android)" },
+      { value: "Sistemas Integrales (Web + Móvil + Desktop)", label: "Sistemas Integrales (Web + Móvil + Desktop)" },
+      { value: "Paneles Administrativos ERP & CRM a Medida", label: "Paneles Administrativos ERP & CRM a Medida" },
+    ],
+  },
+  {
+    group: "🤖 Automatización RPA & WhatsApp con IA",
+    options: [
+      { value: "Agentes de IA en WhatsApp Business API Oficial", label: "Agentes de IA en WhatsApp Business API Oficial" },
+      { value: "Automatización de Procesos RPA & Flujos", label: "Automatización de Procesos RPA & Flujos" },
+      { value: "Integración de APIs & Pasarelas de Pago", label: "Integración de APIs & Pasarelas de Pago" },
+    ],
+  },
+  {
+    group: "💼 Planes de Inversión & Squads",
+    options: [
+      { value: "Plan Start (S/ 2,500 - S/ 3,500)", label: "Plan Start - S/ 2,500 - S/ 3,500 (Landing & MVP)" },
+      { value: "Plan Pro (S/ 4,500)", label: "Plan Pro - S/ 4,500 (Web App & Pasarelas)" },
+      { value: "Plan Business (S/ 5,500)", label: "Plan Business - S/ 5,500 (Completo & CRM)" },
+      { value: "Plan Empresarial / Squad Dedicado (Desde S/ 10,000)", label: "Plan Empresarial / Squad Dedicado (Desde S/ 10,000)" },
+      { value: "Consultoría Técnica / Proyecto a Medida", label: "Consultoría Técnica / Proyecto a Medida" },
+    ],
+  },
+];
+
