@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -115,17 +115,19 @@ export function Hero() {
                   word.toLowerCase().includes("aliado") ||
                   word.toLowerCase().includes("innovación");
                 return (
-                  <motion.span
-                    key={`${word}-${index}`}
-                    variants={wordRevealItem}
-                    className={`inline-block mr-2.5 sm:mr-3 ${
-                      isSpecial
-                        ? "text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] via-[#FF6A33] to-[#FF1493]"
-                        : "text-neutral-950 dark:text-white"
-                    }`}
-                  >
-                    {word}
-                  </motion.span>
+                  <React.Fragment key={`${word}-${index}`}>
+                    <motion.span
+                      variants={wordRevealItem}
+                      className={`inline-block ${
+                        isSpecial
+                          ? "text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] via-[#FF6A33] to-[#FF1493]"
+                          : "text-neutral-950 dark:text-white"
+                      }`}
+                    >
+                      {word}
+                    </motion.span>
+                    {index < headlineWords.length - 1 ? ' ' : ''}
+                  </React.Fragment>
                 );
               })}
             </motion.h1>
@@ -241,7 +243,7 @@ export function Hero() {
                         <Cpu className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-neutral-900 dark:text-white">Full-Stack Cloud Squad</h4>
+                        <p className="text-sm font-bold text-neutral-900 dark:text-white">Full-Stack Cloud Squad</p>
                         <p className="text-xs text-neutral-500 dark:text-white/50">Next.js 15 App Router • API Gateway</p>
                       </div>
                     </div>

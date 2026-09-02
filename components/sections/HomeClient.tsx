@@ -328,7 +328,7 @@ export function HomeClient() {
                 <div className="w-16 h-16 rounded-full bg-[#25D366]/20 border border-[#25D366] text-[#25D366] flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">¡Mensaje Recibido!</h3>
+                <p className="text-2xl font-bold text-neutral-900 dark:text-white">¡Mensaje Recibido!</p>
                 <p className="text-sm text-neutral-600 dark:text-white/70 max-w-sm mx-auto">
                   Gracias {formData.name || 'por contactarnos'}. Nuestro equipo técnico se pondrá en contacto contigo a la brevedad vía WhatsApp/Email.
                 </p>
@@ -342,7 +342,7 @@ export function HomeClient() {
               </motion.div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
-                <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">Solicitar Cotización Inmediata</h3>
+                <p className="text-xl font-bold text-neutral-900 dark:text-white mb-2">Solicitar Cotización Inmediata</p>
 
                 <div>
                   <label className="block text-xs font-semibold text-neutral-700 dark:text-white/70 mb-1.5">Nombre Completo</label>

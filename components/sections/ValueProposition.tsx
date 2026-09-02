@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { motion } from 'motion/react';
@@ -97,9 +97,9 @@ export function ValueProposition() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 dark:text-white tracking-tight leading-[1.18]"
         >
-          ¿Por qué elegir TunkiTek?{' '}
+          ¿Por qué elegir TunkiTek como tu{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] via-[#FF6A33] to-[#FF1493]">
-            Más que proveedores externos, somos tu equipo aliado en tecnología e innovación.
+            socio estratégico de ingeniería?
           </span>
         </motion.h2>
 

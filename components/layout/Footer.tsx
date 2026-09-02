@@ -33,7 +33,7 @@ export function Footer() {
 
           {/* Col 2: Navigation Links */}
           <div>
-            <h4 className="text-sm font-bold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Navegación</h4>
+            <p className="text-xs font-bold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Navegación</p>
             <ul className="space-y-2.5 text-sm">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -51,7 +51,7 @@ export function Footer() {
 
           {/* Col 3: Soluciones Principales (Internal Linking Silo) */}
           <div>
-            <h4 className="text-sm font-bold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Servicios Core</h4>
+            <p className="text-xs font-bold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Servicios Core</p>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/servicios/landing-pages-alta-conversion" className="text-neutral-600 dark:text-white/60 hover:text-[#FF4500] dark:hover:text-[#FF4500] transition-colors block">
@@ -88,7 +88,7 @@ export function Footer() {
 
           {/* Col 4: Contact info */}
           <div>
-            <h4 className="text-sm font-bold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Contacto Directo</h4>
+            <p className="text-xs font-bold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Contacto Directo</p>
             <ul className="space-y-3 text-sm text-neutral-600 dark:text-white/60">
               <li className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-[#FF4500] mt-0.5 flex-shrink-0" />

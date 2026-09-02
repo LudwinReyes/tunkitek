@@ -444,9 +444,9 @@ export function Services() {
                               </span>
                               <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover/sol:text-[#FF4500] group-hover/sol:translate-x-0.5 group-hover/sol:-translate-y-0.5 transition-all" />
                             </div>
-                            <h4 className="text-xs font-bold text-neutral-900 dark:text-white group-hover/sol:text-[#FF4500] transition-colors leading-snug">
+                            <p className="text-xs font-bold text-neutral-900 dark:text-white group-hover/sol:text-[#FF4500] transition-colors leading-snug">
                               {sol.title}
-                            </h4>
+                            </p>
                             <p className="text-[11px] text-neutral-600 dark:text-white/60 mt-1 line-clamp-2 leading-relaxed">
                               {sol.shortDesc}
                             </p>
